@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      author: ayurkov
+      id: 2023-01-18-create-weather
+      changes:
+        - createTable:
+            tableName: weather
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: city
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: temperature
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: feels_like
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: instant
+                  type: int

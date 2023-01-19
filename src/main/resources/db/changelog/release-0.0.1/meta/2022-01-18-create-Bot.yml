@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022-01-18-create-Bot
+      author: ayurkov
+      changes:
+        - createTable:
+            tableName: bot_entities
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: tg_name
+                  type: varchar(255)
+              - column:
+                  name: text
+                  type: text
+              - column:
+                  name: is_sent
+                  type: boolean
+              - column:
+                  name: sent_at
+                  type: timestamp
