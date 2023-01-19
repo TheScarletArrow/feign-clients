@@ -5,7 +5,9 @@ databaseChangeLog:
   - include:
       file: "/meta/2023-01-18-crete-weather.yml"
       relativeToChangelogFile: true
-
+  - include:
+      file: "/meta/2023-01-19-create-exchange.yml"
+      relativeToChangelogFile: true
 
 
 

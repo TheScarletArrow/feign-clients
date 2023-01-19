@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import ru.scarlet.feign.WeatherFeign;
 
 @SpringBootApplication
-@EnableFeignClients(clients = {WeatherFeign.class})
+@EnableFeignClients(clients = {WeatherFeign.class, ru.scarlet.feign.ExchangeFeign.class})
 @EnableScheduling
 
 public class SenderApplication {

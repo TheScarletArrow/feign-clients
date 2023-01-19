@@ -9,13 +9,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import ru.scarlet.entity.WeatherToTg;
-import ru.scarlet.entity.fromjson.WeatherFromJson;
+import ru.scarlet.entity.fromjson.weather.WeatherFromJson;
 import ru.scarlet.exception.WeatherNotFoundException;
 import ru.scarlet.feign.WeatherFeign;
 import ru.scarlet.repository.WeatherRepository;
 import ru.scarlet.service.WeatherService;
-
-import java.io.IOException;
 
 @RequiredArgsConstructor
 @Slf4j
@@ -31,7 +29,7 @@ public class WeatherServiceImpl implements WeatherService {
     private final WeatherRepository weatherRepository;
 
     @Override
-    public WeatherToTg getWeather(String city) throws IOException {
+    public WeatherToTg getWeather(String city) {
         try {
             ResponseEntity<?> weather = weatherFeign.getWeather(city, apiKey, units);
 
@@ -55,8 +53,8 @@ public class WeatherServiceImpl implements WeatherService {
         }
     }
 
-    @Scheduled(fixedDelay = 1000L)
-    public void getWeather() throws IOException {
+    @Scheduled(fixedDelay = 600_000L)
+    public void getWeather() {
         getWeather("Moscow");
     }
 

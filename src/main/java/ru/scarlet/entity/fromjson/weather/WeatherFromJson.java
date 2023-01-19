@@ -1,4 +1,4 @@
-package ru.scarlet.entity.fromjson;
+package ru.scarlet.entity.fromjson.weather;
 
 import lombok.Data;
 

@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      author: ayurkov
+      id: 2023-01-19-create-exchange.yml
+      changes:
+        - createTable:
+            tableName: exchange
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: currency
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cost
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: int

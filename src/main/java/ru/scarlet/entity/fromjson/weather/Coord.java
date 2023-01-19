@@ -1,5 +1,5 @@
 
-package ru.scarlet.entity.fromjson;
+package ru.scarlet.entity.fromjson.weather;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -9,18 +9,16 @@ import lombok.Data;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "speed",
-    "deg",
-    "gust"
+    "lon",
+    "lat"
 })
 @Data
-public class Wind {
+public class Coord {
 
-    @JsonProperty("speed")
-    private Double speed;
-    @JsonProperty("deg")
-    private Integer deg;
-    @JsonProperty("gust")
-    private Double gust;
+    @JsonProperty("lon")
+    private Double lon;
+    @JsonProperty("lat")
+    private Double lat;
+
 
 }

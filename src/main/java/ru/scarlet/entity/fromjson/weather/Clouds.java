@@ -1,5 +1,5 @@
 
-package ru.scarlet.entity.fromjson;
+package ru.scarlet.entity.fromjson.weather;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
